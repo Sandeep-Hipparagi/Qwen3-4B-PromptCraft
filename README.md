@@ -1,3 +1,5 @@
+<img width="1400" height="349" alt="1785490203883" src="https://github.com/user-attachments/assets/98f9a734-2591-44c4-8428-8cc35f336bfc" />
+
 # PromptCraft: Zero-Reasoning System Prompt Engineering
 
 [![Hugging Face Model](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-yellow)](https://huggingface.co/Sandeep4235/Qwen3-4B-PromptCraft-GGUF)
