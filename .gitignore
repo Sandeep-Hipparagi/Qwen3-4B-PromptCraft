@@ -1,0 +1,8 @@
+
+model_merged/
+model_f16.gguf
+*.gguf
+llama.cpp/
+outputs/
+__pycache__/
+.config/
