@@ -1,0 +1,72 @@
+# PromptCraft Default Configuration
+
+# Model Configuration
+model:
+  name: "Qwen3-4B-PromptCraft"
+  version: "1.0.0"
+  model_path: "Qwen3_4B_PromptCraft_GGUF_Q4_K_M.gguf"
+  hf_repo_id: "Sandeep4235/Qwen3-4B-PromptCraft-GGUF"
+
+# Inference Configuration
+inference:
+  n_ctx: 2048
+  n_threads: 8
+  n_gpu_layers: -1  # -1 to use all available GPU layers
+  temperature: 0.3
+  top_p: 0.9
+  max_tokens: 2048
+  stop_sequences:
+    - "<|im_end|>"
+
+# Generation Parameters
+generation:
+  default_temperature: 0.3
+  default_max_tokens: 2048
+  default_top_p: 0.9
+  default_top_k: 40
+
+# Prompt Templates
+templates:
+  basic_prompt: |
+    <|im_start|>user
+    Transform this into a system prompt: '{description}'
+    <|im_end|>
+    <|im_start|>assistant
+    
+  constrained_prompt: |
+    <|im_start|>user
+    Generate a comprehensive system prompt for: '{description}'
+    
+    Constraints:
+    {constraints}
+    <|im_end|>
+    <|im_start|>assistant
+
+# Architectural Constraints (from README)
+architecture:
+  constraints:
+    - name: "Executive Summary"
+      description: "Structural logic of the prompt"
+    - name: "Implementation Artifact"
+      description: "The core system instructions"
+    - name: "Edge Case Matrix"
+      description: "Identification of failure modes and mitigations"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/promptcraft.log"
+
+# Cache Configuration
+cache:
+  enabled: true
+  type: "disk"  # disk or memory
+  path: ".cache/promptcraft"
+  ttl_hours: 24
+
+# Performance Tuning
+performance:
+  batch_size: 1
+  num_workers: 0
+  prefetch_factor: 2
