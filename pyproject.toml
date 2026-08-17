@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "promptcraft"
+version = "1.0.0"
+description = "Optimized for developers and prompt engineers who need to generate structured, constraint-heavy system prompts."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Sandeep Hipparagi", email = "sandeep@bluepatterns.ai"},
+]
+keywords = ["prompt-engineering", "qwen", "llm", "system-prompts", "ai"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.36.0",
+    "peft>=0.7.0",
+    "bitsandbytes>=0.41.0",
+    "accelerate>=0.24.0",
+    "huggingface-hub>=0.19.0",
+    "llama-cpp-python>=0.2.0",
+    "pydantic>=2.0.0",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+    "mypy>=1.5.0",
+]
+
+[project.urls]
+Repository = "https://github.com/Sandeep-Hipparagi/Qwen3-4B-PromptCraft"
+Documentation = "https://huggingface.co/Sandeep4235/Qwen3-4B-PromptCraft-GGUF"
+Issues = "https://github.com/Sandeep-Hipparagi/Qwen3-4B-PromptCraft/issues"
+
+[tool.setuptools]
+packages = ["promptcraft"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
